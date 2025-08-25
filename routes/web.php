@@ -50,13 +50,13 @@ Route::prefix('admin')->middleware(AdminLogin::class)->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('admin');
     Route::get('/profil', [AuthController::class, 'profil'])->name('admin.profil');
     Route::post('/ganti-password', [AuthController::class, 'gantiPassword'])->name('admin.gantiPassword');
-    Route::get('/peternak', [PeternakController::class, 'index'])->name('peternak.index');
-    Route::get('/peternak/tambah', [PeternakController::class, 'tambah'])->name('peternak.tambah');
-    Route::get('/peternak/edit/{peternak_id}', [PeternakController::class, 'edit'])->name('peternak.edit');
-    Route::get('/peternak/{peternak_id}', [PeternakController::class, 'view'])->name('peternak.detail');
-    Route::post('/peternak/insert', [PeternakController::class, 'insert'])->name('peternak.insert');
-    Route::post('/peternak/update', [PeternakController::class, 'update'])->name('peternak.update');
-    Route::post('/peternak/delete', [PeternakController::class, 'delete'])->name('peternak.delete');
+    Route::get('/peternak', [PeternakController::class, 'index'])->name('admin.peternak.index');
+    Route::get('/peternak/tambah', [PeternakController::class, 'tambah'])->name('admin.peternak.tambah');
+    Route::get('/peternak/edit/{peternak_id}', [PeternakController::class, 'edit'])->name('admin.peternak.edit');
+    Route::get('/peternak/{peternak_id}', [PeternakController::class, 'view'])->name('admin.peternak.detail');
+    Route::post('/peternak/insert', [PeternakController::class, 'insert'])->name('admin.peternak.insert');
+    Route::post('/peternak/update', [PeternakController::class, 'update'])->name('admin.peternak.update');
+    Route::post('/peternak/delete', [PeternakController::class, 'delete'])->name('admin.peternak.delete');
 
     Route::get('/operator', [OperatorController::class, 'index'])->name('operator.index');
     Route::get('/operator/tambah', [OperatorController::class, 'tambah'])->name('operator.tambah');
@@ -94,21 +94,21 @@ Route::prefix('operator')->middleware(OperatorLogin::class)->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('operator');
     Route::get('/profil', [AuthController::class, 'profil'])->name('operator.profil');
     Route::post('/ganti-password', [AuthController::class, 'gantiPassword'])->name('operator.gantiPassword');
-    Route::get('/peternak', [PeternakController::class, 'index'])->name('peternak.index');
-    Route::get('/peternak/tambah', [PeternakController::class, 'tambah'])->name('peternak.tambah');
-    Route::get('/peternak/edit/{peternak_id}', [PeternakController::class, 'edit'])->name('peternak.edit');
-    Route::get('/peternak/{peternak_id}', [PeternakController::class, 'view'])->name('peternak.detail');
-    Route::post('/peternak/insert', [PeternakController::class, 'insert'])->name('peternak.insert');
-    Route::post('/peternak/update', [PeternakController::class, 'update'])->name('peternak.update');
-    Route::post('/peternak/delete', [PeternakController::class, 'delete'])->name('peternak.delete');
+    Route::get('/peternak', [PeternakController::class, 'index'])->name('operator.peternak.index');
+    Route::get('/peternak/tambah', [PeternakController::class, 'tambah'])->name('operator.peternak.tambah');
+    Route::get('/peternak/edit/{peternak_id}', [PeternakController::class, 'edit'])->name('operator.peternak.edit');
+    Route::get('/peternak/{peternak_id}', [PeternakController::class, 'view'])->name('operator.peternak.detail');
+    Route::post('/peternak/insert', [PeternakController::class, 'insert'])->name('operator.peternak.insert');
+    Route::post('/peternak/update', [PeternakController::class, 'update'])->name('operator.peternak.update');
+    Route::post('/peternak/delete', [PeternakController::class, 'delete'])->name('operator.peternak.delete');
 
-    Route::get('/operator', [OperatorController::class, 'index'])->name('operator.index');
-    Route::get('/operator/tambah', [OperatorController::class, 'tambah'])->name('operator.tambah');
-    Route::get('/operator/edit/{operator_id}', [OperatorController::class, 'edit'])->name('operator.edit');
-    Route::get('/operator/{operator_id}', [OperatorController::class, 'view'])->name('operator.detail');
-    Route::post('/operator/insert', [OperatorController::class, 'insert'])->name('operator.insert');
-    Route::post('/operator/update', [OperatorController::class, 'update'])->name('operator.update');
-    Route::post('/operator/delete', [OperatorController::class, 'delete'])->name('operator.delete');
+    // Route::get('/operator', [OperatorController::class, 'index'])->name('operator.index');
+    // Route::get('/operator/tambah', [OperatorController::class, 'tambah'])->name('operator.tambah');
+    // Route::get('/operator/edit/{operator_id}', [OperatorController::class, 'edit'])->name('operator.edit');
+    // Route::get('/operator/{operator_id}', [OperatorController::class, 'view'])->name('operator.detail');
+    // Route::post('/operator/insert', [OperatorController::class, 'insert'])->name('operator.insert');
+    // Route::post('/operator/update', [OperatorController::class, 'update'])->name('operator.update');
+    // Route::post('/operator/delete', [OperatorController::class, 'delete'])->name('operator.delete');
 
     Route::get('/jenishewan', [HewanController::class, 'jenisHewan'])->name('jenishewan.index');
     Route::post('/jenishewan/insert', [HewanController::class, 'insertjenisHewan'])->name('jenishewan.insert');

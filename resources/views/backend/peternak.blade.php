@@ -63,7 +63,7 @@
                                         <td><img src="{{ asset('storage/' . $row->peternak_foto) }}" alt=""></td>
                                         <td>{{ $row->peternak_tempatlahir }}, {{ $row->peternak_tgllahir }}</td>
                                         <td><a class="btn btn-success btn-sm active"
-                                                href="{{ route('peternak.edit', $row->peternak_id) }}"><i
+                                                href="{{ route(Session::get('type') . '.peternak.edit', $row->peternak_id) }}"><i
                                                     class="icon-pencil"></i>
                                                 Edit</a>
                                             <a class="btn btn-danger btn-sm" href="javascript:void(0)"
@@ -89,8 +89,8 @@
                     <h5 class="modal-title">Tambah Peternak</h5>
                     <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="{{ route('peternak.insert') }}" class="form-horizontal" method="POST"
-                    enctype="multipart/form-data">
+                <form action="{{ route(Session::get('type') . '.peternak.insert') }}" class="form-horizontal"
+                    method="POST" enctype="multipart/form-data">
                     <div class="modal-body">
                         <fieldset>
 
@@ -259,8 +259,8 @@
                     <h5 class="modal-title">Hapus Peternak</h5>
                     <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="{{ route('peternak.delete') }}" class="form-horizontal" method="POST"
-                    enctype="multipart/form-data">
+                <form action="{{ route(Session::get('type') . '.peternak.delete') }}" class="form-horizontal"
+                    method="POST" enctype="multipart/form-data">
                     <div class="modal-body">
                         <fieldset>
                             <!-- Form Name -->
