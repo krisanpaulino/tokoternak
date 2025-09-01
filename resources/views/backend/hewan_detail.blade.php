@@ -7,7 +7,7 @@
                     <h3>{{ $title }}</h3>
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{ route('admin') }}">Home</a></li>
-                        <li class="breadcrumb-item"><a href="{{ route('hewan.index') }}">Hewan</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route(Session::get('type') . '.hewan.index') }}">Hewan</a></li>
                         <li class="breadcrumb-item active">{{ $title }}</li>
                     </ol>
                 </div>
@@ -84,13 +84,15 @@
                                     </tr>
                                 </table>
                                 <div class="text-right">
-                                    <a class="btn btn-primary btn-sm" href="{{ route('hewan.edit', $hewan->hewan_id) }}"><i
+                                    <a class="btn btn-primary btn-sm"
+                                        href="{{ route(Session::get('type') . '.hewan.edit', $hewan->hewan_id) }}"><i
                                             class="icon-pencil"></i>
                                         Edit</a>
                                     <a class="btn btn-danger btn-sm" href="javascript:void(0)" data-bs-toggle="modal"
                                         data-bs-target="#hapus" data-id="{{ $hewan->hewan_id }}"><i class="icon-trash"></i>
                                         Hapus</a>
-                                    <a class="btn btn-warning btn-sm" href="{{ route('hewan.index') }}"><i
+                                    <a class="btn btn-warning btn-sm"
+                                        href="{{ route(Session::get('type') . '.hewan.index') }}"><i
                                             class="icon-angle-double-left"></i>
                                         Kembali</a>
                                 </div>
@@ -108,7 +110,7 @@
                     <h5 class="modal-title">Hapus Hewan</h5>
                     <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="{{ route('hewan.delete') }}" class="form-horizontal" method="POST"
+                <form action="{{ route(Session::get('type') . '.hewan.delete') }}" class="form-horizontal" method="POST"
                     enctype="multipart/form-data">
                     <div class="modal-body">
                         <fieldset>

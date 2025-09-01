@@ -7,7 +7,8 @@
                     <h3>{{ $title }}</h3>
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{ route('admin') }}">Home</a></li>
-                        <li class="breadcrumb-item"><a href="{{ route('hewan.index') }}">Hewan</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route(Session::get('type') . '.hewan.index') }}">Hewan</a>
+                        </li>
                         <li class="breadcrumb-item active">{{ $title }}</li>
                     </ol>
                 </div>
@@ -23,8 +24,8 @@
                         <h5>Form Hewan</h5><span>Edit data hewan ternak.</span>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('hewan.update') }}" class="form-horizontal" method="POST"
-                            enctype="multipart/form-data">
+                        <form action="{{ route(Session::get('type') . '.hewan.update') }}" class="form-horizontal"
+                            method="POST" enctype="multipart/form-data">
                             <fieldset>
 
                                 <h6 class="m-t-10">Data Hewan</h6>
@@ -221,8 +222,8 @@
                                     </div>
 
                                 </div>
-                                <a class="btn btn-secondary" href="{{ route('hewan.index') }}"> <i
-                                        class="icon-angle-double-left"></i>Kembali</a>
+                                <a class="btn btn-secondary" href="{{ route(Session::get('type') . '.hewan.index') }}">
+                                    <i class="icon-angle-double-left"></i>Kembali</a>
                                 <button class="btn btn-primary" type="submit">Update Hewan</button>
                             </fieldset>
                         </form>

@@ -62,11 +62,11 @@
                                             <td>{{ $row->hewan_jumlah }}</td>
                                             <td>
                                                 <a class="btn btn-info btn-sm"
-                                                    href="{{ route('hewan.detail', $row->hewan_id) }}"><i
+                                                    href="{{ route(Session::get('type') . '.hewan.detail', $row->hewan_id) }}"><i
                                                         class="icon-eye"></i>
                                                     Detail</a>
                                                 <a class="btn btn-primary btn-sm"
-                                                    href="{{ route('hewan.edit', $row->hewan_id) }}"><i
+                                                    href="{{ route(Session::get('type') . '.hewan.edit', $row->hewan_id) }}"><i
                                                         class="icon-pencil"></i>
                                                     Edit</a>
                                                 <a class="btn btn-danger btn-sm" href="javascript:void(0)"
@@ -93,7 +93,7 @@
                     <h5 class="modal-title">Tambah Hewan</h5>
                     <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="{{ route('hewan.insert') }}" class="form-horizontal" method="POST"
+                <form action="{{ route(Session::get('type') . '.hewan.insert') }}" class="form-horizontal" method="POST"
                     enctype="multipart/form-data">
                     <div class="modal-body">
                         <fieldset>
@@ -298,8 +298,8 @@
                     <h5 class="modal-title">Hapus Hewan</h5>
                     <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="{{ route('hewan.delete') }}" class="form-horizontal" method="POST"
-                    enctype="multipart/form-data">
+                <form action="{{ route(Session::get('type') . '.hewan.delete') }}" class="form-horizontal"
+                    method="POST" enctype="multipart/form-data">
                     <div class="modal-body">
                         <fieldset>
                             <!-- Form Name -->

@@ -71,13 +71,13 @@ Route::prefix('admin')->middleware(AdminLogin::class)->group(function () {
     Route::post('/jenishewan/update', [HewanController::class, 'updatejenisHewan'])->name('jenishewan.update');
     Route::post('/jenishewan/delete', [HewanController::class, 'deletejenisHewan'])->name('jenishewan.delete');
 
-    Route::get('/hewan', [HewanController::class, 'index'])->name('hewan.index');
-    Route::get('/hewan/tambah', [HewanController::class, 'tambah'])->name('hewan.tambah');
-    Route::get('/hewan/edit/{hewan_id}', [HewanController::class, 'edit'])->name('hewan.edit');
-    Route::get('/hewan/{hewan_id}', [HewanController::class, 'view'])->name('hewan.detail');
-    Route::post('/hewan/insert', [HewanController::class, 'insert'])->name('hewan.insert');
-    Route::post('/hewan/update', [HewanController::class, 'update'])->name('hewan.update');
-    Route::post('/hewan/delete', [HewanController::class, 'delete'])->name('hewan.delete');
+    Route::get('/hewan', [HewanController::class, 'index'])->name('admin.hewan.index');
+    Route::get('/hewan/tambah', [HewanController::class, 'tambah'])->name('admin.hewan.tambah');
+    Route::get('/hewan/edit/{hewan_id}', [HewanController::class, 'edit'])->name('admin.hewan.edit');
+    Route::get('/hewan/{hewan_id}', [HewanController::class, 'view'])->name('admin.hewan.detail');
+    Route::post('/hewan/insert', [HewanController::class, 'insert'])->name('admin.hewan.insert');
+    Route::post('/hewan/update', [HewanController::class, 'update'])->name('admin.hewan.update');
+    Route::post('/hewan/delete', [HewanController::class, 'delete'])->name('admin.hewan.delete');
 
     Route::get('/order', [TransaksiController::class, 'order'])->name('admin.order');
     Route::get('/order/detail/{id}', [TransaksiController::class, 'detailAdmin'])->name('admin.order.detail');
@@ -110,10 +110,6 @@ Route::prefix('operator')->middleware(OperatorLogin::class)->group(function () {
     // Route::post('/operator/update', [OperatorController::class, 'update'])->name('operator.update');
     // Route::post('/operator/delete', [OperatorController::class, 'delete'])->name('operator.delete');
 
-    Route::get('/jenishewan', [HewanController::class, 'jenisHewan'])->name('jenishewan.index');
-    Route::post('/jenishewan/insert', [HewanController::class, 'insertjenisHewan'])->name('jenishewan.insert');
-    Route::post('/jenishewan/update', [HewanController::class, 'updatejenisHewan'])->name('jenishewan.update');
-    Route::post('/jenishewan/delete', [HewanController::class, 'deletejenisHewan'])->name('jenishewan.delete');
 
     Route::get('/hewan', [HewanController::class, 'index'])->name('operator.hewan.index');
     Route::get('/hewan/tambah', [HewanController::class, 'tambah'])->name('operator.hewan.tambah');
