@@ -145,7 +145,7 @@
                                         href="{{ route('jenishewan.index') }}"><i
                                             data-feather="settings"></i><span>Jenis Hewan</span></a></li>
                                 <li class="dropdown"><a class="nav-link menu-title link-nav"
-                                        href="{{ route('hewan.index') }}"><i data-feather="feather"></i><span>Hewan
+                                        href="{{ route('admin.hewan.index') }}"><i data-feather="feather"></i><span>Hewan
                                             Ternak</span></a></li>
                                 <li class="sidebar-main-title">
                                     <div>
